@@ -137,6 +137,62 @@ export default function Portfolio() {
           ))}
         </div>
       </section>
+      {/* EXPERIÊNCIAS */}
+      <section id="experiencias" className="py-16 px-6">
+        <h3 className="text-3xl font-bold mb-8 text-center text-purple-400">
+          Experiências
+        </h3>
+        <div className="max-w-5xl mx-auto grid gap-8">
+          {[
+            {
+              cargo: "Analista de Desenvolvimento de Sistemas",
+              empresa: "Vonixx",
+              periodo: "Dez/2023 – Atual",
+              atividades: [
+                "Desenvolvi customizações e automações no ERP Sankhya utilizando Java.",
+                "Criei interfaces modernas e responsivas com TypeScript, React e Tailwind CSS.",
+                "Implementei integrações com APIs RESTful, garantindo comunicação entre sistemas.",
+                "Otimizei queries SQL para melhorar performance de relatórios."
+              ]
+            },
+            {
+              cargo: "Assistente de Inteligência Comercial",
+              empresa: "UniAteneu",
+              periodo: "Jan/2023 – Nov/2023",
+              atividades: [
+                "Desenvolvi scripts de web scraping em Python com Selenium.",
+                "Automatizei processos de coleta e análise de dados, eliminando tarefas manuais."
+              ]
+            },
+            {
+              cargo: "Estagiário em Desenvolvimento Web",
+              empresa: "ÁgilGPR",
+              periodo: "Ago/2018 – Set/2019",
+              atividades: [
+                "Desenvolvi aplicações web com Ruby on Rails, ReactJS e Bootstrap.",
+                "Modelei e gerenciei banco de dados PostgreSQL, garantindo integridade e performance.",
+                "Participei da criação de MVPs com foco em entregas rápidas."
+              ]
+            }
+          ].map((exp, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: idx * 0.2 }}
+              className="border border-purple-700 p-6 rounded-xl bg-[#0f172a]/70 backdrop-blur-md shadow-lg"
+            >
+              <h4 className="text-xl font-semibold text-purple-300">{exp.cargo}</h4>
+              <p className="text-gray-400">{exp.empresa} | {exp.periodo}</p>
+              <ul className="list-disc pl-6 mt-3 text-gray-300">
+                {exp.atividades.map((atv, i) => (
+                  <li key={i}>{atv}</li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
+      </section>
 
       {/* PROJETOS */}
       <section id="projetos" className="bg-[#0f172a]/80 py-16 px-6">
